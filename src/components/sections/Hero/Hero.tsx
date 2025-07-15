@@ -5,9 +5,9 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/common/Button/Button';
 
 interface HeroProps {
-  title: string;
-  subtitle: string;
-  ctaText: string;
+  title?: string;
+  subtitle?: string;
+  ctaText?: string;
   backgroundImage?: string;
 }
 

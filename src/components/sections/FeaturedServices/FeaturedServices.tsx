@@ -77,17 +77,12 @@ const FeaturedServices = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredServices.map((service, index) => (
-            <motion.div
-              key={service.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-            >
-              <Card
-                variant="default"
-                hover
-                className="h-full flex flex-col"
+            <div key={service.id} className="h-full flex flex-col">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
               >
                 <div className="text-4xl mb-4">{service.icon}</div>
                 <h3 className="text-xl font-poppins font-semibold text-primary-blue mb-3">
@@ -113,8 +108,8 @@ const FeaturedServices = () => {
                 >
                   Saber más
                 </Button>
-              </Card>
-            </motion.div>
+              </motion.div>
+            </div>
           ))}
         </div>
 

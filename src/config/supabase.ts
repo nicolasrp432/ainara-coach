@@ -45,6 +45,14 @@ export type Service = {
   created_at: string;
 };
 
+export type Newsletter = {
+  id: string;
+  name: string;
+  email: string;
+  interests: string[];
+  created_at: string;
+};
+
 // Database interface
 export interface Database {
   public: {
@@ -63,6 +71,11 @@ export interface Database {
         Row: Service;
         Insert: Omit<Service, 'id' | 'created_at'>;
         Update: Partial<Omit<Service, 'id' | 'created_at'>>;
+      };
+      newsletter: {
+        Row: Newsletter;
+        Insert: Omit<Newsletter, 'id' | 'created_at'>;
+        Update: Partial<Omit<Newsletter, 'id' | 'created_at'>>;
       };
     };
   };
